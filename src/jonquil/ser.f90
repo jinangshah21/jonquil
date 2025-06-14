@@ -116,7 +116,7 @@ subroutine json_dump_to_string(val, string, error, config)
 
    type(json_serializer) :: ser
 
-   ser = json_serializer()
+   ! ser = json_serializer()
    if (present(config)) ser%config = config
    call val%accept(ser)
    string = ser%output
