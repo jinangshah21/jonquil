@@ -9,8 +9,8 @@ keywords = ["json", "io", "serde"]
 description = "Bringing TOML blooms to JSON land"
 
 [dependencies]
-toml-f.git = "https://github.com/toml-f/toml-f"
-toml-f.tag = "v0.4.1"
+toml-f.git = "https://github.com/jinangshah21/toml-f.git"
+toml-f.rev = "65ef20430e2543ac89a5558a11ae1c8404d46763"
 
 [[test]]
 name = "jqtest"
