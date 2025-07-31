@@ -210,8 +210,8 @@ subroutine visit_table(visitor, table)
       class is(toml_table)
          call ptr%get_keys(vt)
          if (ptr%has_key("type") .and. ptr%has_key("value") .and. size(vt)==2) then
-            call get_value(ptr, "type", str)
-            call prune_value(val, ptr, str)
+            ! call get_value(ptr, "type", str)
+            ! call prune_value(val, ptr, str)
             call val%accept(visitor)
             call table%delete(list(i)%key)
             call table%push_back(val, stat)
@@ -239,7 +239,8 @@ subroutine prune_value(val, table, str)
    real(tfr) :: fval
 
    call table%get("value", ptr)
-   allocate(val, source=ptr)
+   allocate(val)
+   val = ptr
    if (allocated(table%key)) then
       val%key = table%key
    else
